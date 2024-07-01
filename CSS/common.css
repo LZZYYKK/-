@@ -1,0 +1,218 @@
+.wrapper {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.shortcut {
+  height: 52px;
+  background-color: #333;
+}
+
+.shortcut ul {
+  float: right;
+}
+
+.shortcut ul li {
+  float: left;
+  line-height: 52px;
+}
+
+.shortcut ul li a {
+  font-size: 14px;
+  color: #dcdcdc;
+  padding: 0 16px;
+  border-right: 1px solid #666;
+}
+/* 疑惑1：为什么在这里base中的a:hover不起作用了呢？ */
+.shortcut ul li a:hover {
+  color: aqua;
+}
+
+.shortcut ul li:last-child a {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.shortcut .wrapper ul li a span {
+  display: inline-block;
+  width: 11px;
+  height: 16px;
+  background-image: url(../images/sprites.png);
+  background-position: -160px -70px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* 遇到的问题1：最后一个li被挤下去了
+原因：.shortcut .wrapper ul li a span 里的display设置为了block
+解决方案：改为inline-block
+ */
+
+.header {
+  margin: 27px auto;
+}
+
+.logo {
+  float: left;
+  width: 207px;
+  height: 70px;
+  background-image: url(../images/logo.png);
+  background-size: cover;
+}
+
+.nav {
+  float: left;
+  height: 70px;
+}
+
+.nav ul li {
+  float: left;
+  line-height: 80px;
+}
+
+.nav ul li a {
+  font-size: 16px;
+  color: #333;
+  margin: 0 24px;
+  padding-bottom: 8px;
+}
+
+.nav ul li:first-child a {
+  margin-left: 40px;
+}
+
+.nav ul li a:hover {
+  color: #27ba9b;
+  border-bottom: 1px solid #27ba9b;
+}
+
+.search {
+  position: relative;
+  float: left;
+  height: 30px;
+  width: 172px;
+  margin-top: 28px;
+  margin-left: 58px;
+  border-bottom: 2px solid #e7e7e7;
+}
+
+.search span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/sprites.png);
+  background-position: -80px -70px;
+}
+
+.search input {
+  float: left;
+  padding-left: 28px;
+}
+
+.search input::placeholder {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* 遇到问题2：搜一搜与搜索图标不在一行，搜一搜下来了
+原因：
+解决方案1：搜索小图标用定位
+*/
+
+.car {
+  position: relative;
+  float: right;
+  width: 23px;
+  height: 23px;
+  margin-top: 28px;
+  background-image: url(../images/sprites.png);
+  background-position: -121px -71px;
+}
+
+.car span {
+  position: absolute;
+  left: 15px;
+  top: -6px;
+  width: 20px;
+  height: 14px;
+  border-radius: 10px;
+  background-color: #e26237;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  line-height: 14px;
+}
+
+.footer {
+  background-color: #333;
+  height: 342px;
+}
+
+.footer .top {
+  height: 170px;
+  border-bottom: 2px solid #434343;
+}
+
+.footer .top ul li {
+  float: left;
+  width: 28%;
+  line-height: 170px;
+  font-size: 28px;
+  color: #fff;
+}
+
+.footer .top ul li:first-child {
+  margin-left: 157px;
+}
+
+.footer .top ul li span {
+  /* display: inline-block; */
+  float: left;
+  width: 57px;
+  height: 57px;
+  margin-top: 52px;
+  margin-right: 20px;
+  background-image: url(../images/sprites.png);
+}
+
+/* 遇到的问题3：尾部小图标与文字对不齐
+解决方案1：让.footer .top ul li span 浮动起来
+解决方案2：设置为::before
+*/
+
+.footer .top ul li:first-child span {
+  background-position: 0 0;
+}
+
+.footer .top ul li:nth-child(2) span {
+  background-position: -131px 0;
+}
+
+.footer .top ul li:last-child span {
+  background-position: -65px 0;
+}
+
+.footer .bottom p {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.footer .bottom p a {
+  color: #999;
+  padding-right:7px;
+  padding-left: 6px;
+  border-right: 1px solid #999;
+}
+/* 疑惑2：为啥每个li之间会有一定的空隙 */
+
+.footer .bottom p a:last-child {
+  border: none;
+}
+
+.footer .bottom p:first-child {
+  margin-top: 40px;
+}
